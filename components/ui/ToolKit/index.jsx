@@ -1,82 +1,95 @@
-import SectionWrapper from "../../SectionWrapper"
-import Image from "next/image"
-import wordpress from "../../../public/icons/wordpress.svg"
-import nextjs from "../../../public/icons/nextjs.svg"
-import tailwind from "../../../public/icons/tailwind.svg"
-import nodejs from "../../../public/icons/nodejs.svg"
-import vercel from "../../../public/icons/vercel.svg"
-import figma from "../../../public/icons/figma.svg"
+import SectionWrapper from "../../SectionWrapper";
+import Image from "next/image";
+
+const features = [
+  {
+    img: "/images/rahman-charity.png",
+    title: "Rahman Charity",
+    desc: "Organisation caritative internationale partenaire.",
+  },
+  {
+    img: "/images/uni-droit.png",
+    title: "Université de Droit",
+    desc: "Collaboration académique et recherche juridique.",
+  },
+  {
+    img: "/images/human-rights.png",
+    title: "Droits Humains",
+    desc: "Réseau de défense des droits fondamentaux.",
+  },
+  {
+    img: "/images/legal-tech.png",
+    title: "LegalTech",
+    desc: "Innovations technologiques au service du droit.",
+  },
+  {
+    img: "/images/mediation.png",
+    title: "Centre de Médiation",
+    desc: "Plateforme de résolution amiable des conflits.",
+  },
+  {
+    img: "/images/ngo-network.png",
+    title: "Réseau ONG",
+    desc: "Collaboration internationale pour la justice sociale.",
+  },
+];
 
 const ToolKit = () => {
+  return (
+    <SectionWrapper
+      id="partenaires"
+      className="relative overflow-hidden py-16 "
+    >
+      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <h2 className="text-blue-500 text-3xl font-bold sm:text-4xl">
+            Nos Partenaires Engagés
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Ensemble, nous construisons une justice plus accessible.
+          </p>
+        </div>
 
-    const features = [
-        {
-            icon: wordpress,
-            title: "Wordpress",
-            desc: "WordPress is an open-source content management system (CMS)."
-        },
-        {
-            icon: nextjs,
-            title: "Next.js",
-            desc: "Next.js is a React framework that gives you building blocks to create web apps."
-        },
-        {
-            icon: tailwind,
-            title: "Tailwind CSS",
-            desc: "Tailwind CSS is basically a utility-first CSS framework for rapidly building UIs."
-        },
-        {
-            icon: nodejs,
-            title: "Node.js",
-            desc: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment."
-        },
-        {
-            icon: vercel,
-            title: "Vercel",
-            desc: "Vercel is a cloud platform that enables developers to host web apps."
-        },
-        {
-            icon: figma,
-            title: "Figma",
-            desc: "Figma is a web-based graphics editing and user interface design app."
-        },
-    ]
+        <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((item, idx) => (
+            <li
+              key={idx}
+              className="
+                group 
+                relative 
+                flex 
+                flex-col 
+                items-center 
+                rounded-xl 
+                border 
+                border-gray-200 
+                bg-white 
+                p-6 
+                text-center
+                transition 
+                hover:shadow-xl
+              "
+            >
+              {/* <div className="w-16 h-16 mb-4">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                  priority
+                />
+              </div> */}
+              <h3 className="text-lg font-semibold text-blue-600">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-gray-500">{item.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SectionWrapper>
+  );
+};
 
-    return (
-        <SectionWrapper>
-            <div id="toolkit" className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
-                <div className="max-w-2xl mx-auto space-y-3 sm:text-center">
-                    <h2 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                        Work with the best toolkit
-                    </h2>
-                    <p>
-                        These are a few of our favourite things
-                    </p>
-                </div>
-                <div className="mt-12">
-                    <ul className="grid gap-y-8 gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
-                        {
-                            features.map((item, idx) => (
-                                <li key={idx} className="flex gap-x-4">
-                                    <div className="flex-none w-12 h-12 gradient-border rounded-full flex items-center justify-center">
-                                        <Image src={item.icon} alt={item.title} />
-                                    </div>
-                                    <div>
-                                        <h4 className="text-lg text-gray-800 font-semibold">
-                                            {item.title}
-                                        </h4>
-                                        <p className="mt-3">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </div>
-        </SectionWrapper>
-    )
-}
-
-export default ToolKit
+export default ToolKit;

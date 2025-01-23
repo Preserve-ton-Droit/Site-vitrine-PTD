@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+    scroll-behavior: smooth;
+}
 .custom-screen {
     @apply max-w-screen-xl mx-auto px-4 md:px-8;
 }
