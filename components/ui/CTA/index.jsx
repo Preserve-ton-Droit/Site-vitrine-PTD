@@ -1,6 +1,7 @@
 import SectionWrapper from "../../SectionWrapper";
 import Image from "next/image";
 import ctaImage from "../../../public/cta-image.jpg";
+import Link from 'next/link';
 import { StarIcon } from "@heroicons/react/24/outline";
 
 const CTA = () => {
@@ -28,12 +29,12 @@ const CTA = () => {
               votre situation.
             </p>
             <div className="mt-6">
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-lg shadow transition-all focus:outline-none focus:ring-4 focus:ring-blue-300"
-              >
-                Commencer
-              </a>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-lg shadow transition-all focus:outline-none focus:ring-4 focus:ring-blue-300"
+            >
+              Commencer
+            </Link>
             </div>
           </div>
         </div>

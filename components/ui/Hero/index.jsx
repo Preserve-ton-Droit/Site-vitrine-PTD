@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from 'next/link';
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -81,12 +82,12 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-3">
-              <a
+              <Link 
                 href="/contact"
                 className="px-6 py-3 text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 rounded-md font-medium text-sm transition-colors"
               >
                 Commencer
-              </a>
+              </Link>
               <a
                 href="#mission"
                 className="px-6 py-3 text-blue-500 border border-blue-500 hover:bg-blue-50 focus:ring-4 focus:ring-blue-200 rounded-md font-medium text-sm transition-colors"
