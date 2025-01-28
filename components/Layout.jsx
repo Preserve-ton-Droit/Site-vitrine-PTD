@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>PTD</title>
+        <title>Préserve Ton Droit</title>
         <meta name="description" content="Votre partenaire solidaire" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
