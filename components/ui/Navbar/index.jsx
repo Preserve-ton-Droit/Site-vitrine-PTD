@@ -4,15 +4,21 @@ import { useEffect, useState } from "react";
 import Brand from "../Brand";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion"; // Optional: For animations
+import Input from "../Input";
+import Search from "../../../public/icons/search.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { events } = useRouter();
 
   const navigation = [
-    { title: "Notre Mission", path: "/#mission" },
-    { title: "Nos Partenaires", path: "/#partenaires" },
-    { title: "Témoignages", path: "/#temoignages" },
+    { title: "Accueil", path: "/#mission" },
+    { title: "A propos", path: "/#partenaires" },
+    { title: "Essentiel du droit", path: "/#temoignages" },
+    { title: "Aide et contact", path: "/#temoignages" },
+    { title: "Evènements & Projets", path: "/test" },
+    { title: "Quiz", path: "/test" },
+    { title: "Dons", path: "/test" },
   ];
 
   useEffect(() => {
@@ -37,31 +43,42 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gray-200 shadow-sm z-50">
-      <nav className="custom-screen flex items-center justify-between py-4">
-        <Brand />
 
-        <ul className="hidden md:flex space-x-6 items-center">
+
+      <div className="custom-screen hidden md:flex justify-center mt-4"><Brand /></div>
+        
+      <nav className="w-full custom-screen flex  py-4">
+
+        <ul className="hidden md:flex space-x-6 justify-between items-center w-full">
           {navigation.map((item, idx) => (
             <li
               key={idx}
               className="text-gray-700 hover:text-blue-500 transition-colors duration-200"
             >
-              <Link legacyBehavior href={item.path}>
-                <a className="text-base font-medium">{item.title}</a>
+              <Link  href={item.path}>
+                <p className="text-base font-medium">{item.title}</p>
               </Link>
             </li>
           ))}
-          <li>
-            <Link legacyBehavior href="/contact">
-              <a className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">
+
+
+          <Input className="h-8 border border-blue-400 placeholder:text-blue-400" placeholder="Rechercher" rightIcon={<Search />} />
+          {/* <li>
+            <Link  href="/contact">
+              <p className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">
                 Besoin d'aide
-              </a>
+              </p>
             </Link>
-          </li>
+          </li> */}
         </ul>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center justify-between w-full gap-4">
+
+          <Brand />
+
+          <Input className="h-8 border border-blue-400 placeholder:text-blue-400" placeholder="Rechercher" rightIcon={<Search />} />
+
           <button
             onClick={toggleMenu}
             className="text-gray-700 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
@@ -69,6 +86,8 @@ const Navbar = () => {
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+
+
         </div>
       </nav>
 
@@ -89,16 +108,16 @@ const Navbar = () => {
                     key={idx}
                     className="text-gray-700 hover:text-blue-500 transition-colors duration-200"
                   >
-                    <Link legacyBehavior href={item.path}>
-                      <a className="text-lg font-medium">{item.title}</a>
+                    <Link  href={item.path}>
+                      <p className="text-lg font-medium">{item.title}</p>
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link legacyBehavior href="/contact">
-                    <a className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">
+                  <Link  href="/contact">
+                    <p className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200">
                       Besoin d'aide
-                    </a>
+                    </p>
                   </Link>
                 </li>
               </ul>
