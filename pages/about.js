@@ -1,12 +1,5 @@
 import Head from "next/head";
-import GradientWrapper from "../components/GradientWrapper";
-import CTA from "../components/ui/CTA";
-import Features from "../components/ui/Features";
-import FooterCTA from "../components/ui/FooterCTA";
-import Hero from "../components/ui/Hero";
-// import LogoGrid from "../components/ui/LogoGrid";
-import Testimonials from "../components/ui/Testimonials";
-import ToolKit from "../components/ui/ToolKit";
+
 import { useState } from "react";
 import Values from "../components/ui/Values";
 import Volunteers from "../components/ui/Volunteers";
@@ -19,45 +12,40 @@ export default function About() {
 
     const volunteers = [
         {
-            img: "/images/Base feature icon.png",
+            img: "/images/avatar.png",
             title: "John yo",
             subtitle: "Lorem ",
             link: "@test"
         },
         {
-            img: "/images/Base feature icon.png",
+            img: "/images/avatar.png",
             title: "John Doe",
             subtitle: "Lorem 2 ",
             link: "@test"
         },
 
         {
-            img: "/images/Base feature icon.png",
+            img: "/images/avatar.png",
             title: "John Doe",
             subtitle: "Lorem 2 ",
             link: "@test"
         },
 
         {
-            img: "/images/Base feature icon.png",
+            img: "/images/avatar.png",
             title: "John Doe",
             subtitle: "Lorem 2 ",
             link: "@test"
         },
 
         {
-            img: "/images/Base feature icon.png",
+            img: "/images/avatar.png",
             title: "John Doe",
             subtitle: "Lorem 2 ",
             link: "@test"
         },
 
-        {
-            img: "/images/Base feature icon.png",
-            title: "John Doe",
-            subtitle: "Lorem 2 ",
-            link: "@test"
-        },
+   
         
     ]
   return (
@@ -69,7 +57,7 @@ export default function About() {
 
       <div className="relative pt-28 pb-12 flex flex-col items-center custom-screen">
 
-      <p className="text-6xl font-bold text-center text-bleu ">Qui sommes-nous ?</p>
+      <p className="text-5xl lg:text-6xl font-bold text-center text-bleu ">Qui sommes-nous ?</p>
       <p className="text-2xl font-bold text-center text-bleu mt-4">Préserve Ton Droit</p>
       <p className="text-lg  text-center text-noir mt-4">Une association française d’aide juridique et humanitaire.</p>
 
@@ -85,7 +73,7 @@ export default function About() {
       </div>
       <section className="flex flex-col items-center justify-center">
         {activeTab === "histoire" && (
-            <div className="w-1/2 ">
+            <div className="lg:w-1/2 ">
             <p>Le mot du président-fondateur : <br/>
     “Mon désir d’aider les plus démunis découle de mon ambition de devenir avocat, un rêve que l’association que j’aie créée me permet de concrétiser. 
     <br/>
@@ -136,9 +124,9 @@ Que les demandeurs soient compris et pris en considération, qu’ils ne sont pa
 
       <p className="text-6xl font-bold text-center text-bleu  my-12">Nos bénévoles</p>
 
-      <section className="flex flex-row flex-wrap justify-center ">
+      <section className="flex flex-row justify-center ">
 
-        <div className="mt-4 flex flex-row flex-wrap gap-x-20 gap-y-8 justify-center w-2/3 ">
+        <div className="mt-4 flex flex-row flex-wrap gap-x-20 sm:gap-x-40 gap-y-8 justify-center w-full  sm:w-2/3  ">
 
         {volunteers.map((volunteer, index) => (
           <Volunteers key={index} img={volunteer.img} title={volunteer.title} subtitle={volunteer.subtitle} link={volunteer.link} />
@@ -154,7 +142,7 @@ Que les demandeurs soient compris et pris en considération, qu’ils ne sont pa
 
 
 
-<section className="flex flex-row justify-center gap-x-8 gap-y-12">
+<section className="flex flex-row justify-center gap-x-8 gap-y-12 flex-wrap sm:flex-nowrap">
 
 <CurrentProject
       img="/images/Placeholder.png"
