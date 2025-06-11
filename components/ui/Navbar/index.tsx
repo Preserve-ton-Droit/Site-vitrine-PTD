@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Brand from "../Brand";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion"; // Optional: For animations
+import Brand from "../Brand";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
